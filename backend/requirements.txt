@@ -15,8 +15,8 @@ yt-dlp==2024.12.23
 # HTTP client
 httpx==0.28.1
 
-# CORS
-starlette==0.42.0
+# CORS (versão gerenciada pelo FastAPI)
+# starlette será instalado automaticamente como dependência do FastAPI
 
 # Rate limiting (in-memory)
 slowapi==0.1.9
