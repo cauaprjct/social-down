@@ -1,0 +1,29 @@
+# SocialDown Backend Dependencies
+# Python 3.12+
+
+# FastAPI e servidor
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Validação de dados
+pydantic==2.10.5
+pydantic-settings==2.7.1
+
+# yt-dlp para download de vídeos
+yt-dlp==2024.12.23
+
+# HTTP client
+httpx==0.28.1
+
+# CORS
+starlette==0.42.0
+
+# Rate limiting (in-memory)
+slowapi==0.1.9
+
+# Utilitários
+python-dotenv==1.0.1
+python-multipart==0.0.20
+
+# Logging
+loguru==0.7.3
