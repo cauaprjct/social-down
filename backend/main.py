@@ -57,8 +57,12 @@ class Settings(BaseSettings):
 settings = Settings()
 
 # Configurar logging
+# Em produção (Render), usar /tmp para logs
+log_dir = "/tmp/logs" if os.getenv("RENDER") else "logs"
+os.makedirs(log_dir, exist_ok=True)
+
 logger.add(
-    "logs/app.log",
+    f"{log_dir}/app.log",
     rotation="10 MB",
     retention="7 days",
     level="INFO"
@@ -75,9 +79,6 @@ limiter = Limiter(key_func=get_remote_address)
 async def lifespan(app: FastAPI):
     """Gerencia o ciclo de vida da aplicação"""
     logger.info(f"Iniciando {settings.app_name}...")
-    
-    # Criar diretório de logs se não existir
-    os.makedirs("logs", exist_ok=True)
     
     yield
     
