@@ -7,8 +7,5 @@ set -o errexit
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Install FFmpeg (required by yt-dlp)
-apt-get update
-apt-get install -y ffmpeg
-
 echo "Build completed successfully!"
+echo "Note: FFmpeg is not available on free tier. Video downloads may have limited functionality."
