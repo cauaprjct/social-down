@@ -6,7 +6,7 @@ Define os schemas de requisição e resposta da API.
 """
 
 from typing import List, Literal, Optional
-from pydantic import BaseModel, HttpUrl, field_validator
+from pydantic import BaseModel, HttpUrl, validator
 
 
 # ============================================
@@ -19,8 +19,7 @@ class DownloadRequest(BaseModel):
     """
     url: str
     
-    @field_validator("url")
-    @classmethod
+    @validator("url")
     def validate_url(cls, v: str) -> str:
         """Valida se a URL é de uma plataforma suportada"""
         if not v:
