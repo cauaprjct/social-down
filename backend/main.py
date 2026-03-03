@@ -17,8 +17,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, HttpUrl, validator
-from pydantic import BaseSettings
+from pydantic import BaseModel, HttpUrl, field_validator
+from pydantic_settings import BaseSettings
 from loguru import logger
 from slowapi import Limiter
 from slowapi.util import get_remote_address
