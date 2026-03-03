@@ -38,12 +38,7 @@ class Settings(BaseSettings):
     api_version: str = "v1"
     
     # CORS - Configure para produção
-    cors_origins: List[str] = [
-        "http://localhost:3000",
-        "https://*.vercel.app",
-        "https://*.railway.app",
-        "https://*.render.com",
-    ]
+    cors_origins: List[str] = ["*"]  # Permitir requisições de origens variadas (como a Vercel)
     
     # Rate limiting
     rate_limit_requests: int = 10
